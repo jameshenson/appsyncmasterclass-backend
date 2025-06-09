@@ -1,0 +1,30 @@
+{
+  "name": "appsyncmasterclass-backend",
+  "version": "1.0.0",
+  "description": "backend for AppSync Masterclass Demo app",
+  "main": "index.js",
+  "scripts": {
+    "sls": "sls"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jameshenson/appsyncmasterclass-backend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jameshenson/appsyncmasterclass-backend/issues"
+  },
+  "homepage": "https://github.com/jameshenson/appsyncmasterclass-backend#readme",
+  "devDependencies": {
+    "aws-sdk": "^2.1692.0",
+    "serverless": "2.4.0",
+    "serverless-appsync-plugin": "^1.8.0",
+    "serverless-iam-roles-per-function": "^3.2.0"
+  },
+  "dependencies": {
+    "chance": "^1.1.13",
+    "graceful-fs": "^4.2.11"
+  }
+}
