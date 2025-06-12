@@ -1,3 +1,5 @@
+# "org" ensures this Service is used with the correct Serverless Framework Access Key.
+org: sixpillarsconsulting
 service: appsyncmasterclass-backend
 
 provider:
@@ -14,13 +16,13 @@ package:
     - package-lock.json
 
 custom:
-  stage: ${opt:stage, self:provider.stage}
+  stage: ${opt:stage, 'dev'}
   appSync: ${file(serverless.appsync-api.yml)}
 
 plugins:
   - serverless-appsync-plugin
   - serverless-iam-roles-per-function
-
+  - serverless-export-env
 functions:
   confirmUserSignup:
     handler: functions/confirm-user-signup.handler
