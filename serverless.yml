@@ -11,9 +11,12 @@ provider:
     AWS_NODEJS_CONNECTION_REUSE_ENABLED: "1"
 
 package:
+  individually: true
   exclude:
     - package.json
     - package-lock.json
+  include:
+    - node_modules/aws-sdk/**
 
 custom:
   stage: ${opt:stage, 'dev'}
@@ -37,7 +40,7 @@ functions:
           Fn::GetAtt:
             - UsersTable
             - Arn
-
+    
 resources:
   Resources:
     UsersTable:
@@ -109,3 +112,7 @@ resources:
     CognitoUserPoolId:
       Value:
         Ref: CognitoUserPool
+
+    WebCognitoUserPoolClientId:
+      Value: 
+        Ref: WebUserPoolClient
